@@ -297,4 +297,41 @@ document.addEventListener("click", function() {
 });
 </script>
 
+<style>
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 10px; /* very small like drops */
+  animation: fall linear forwards;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+</style>
+
+<script>
+const hearts = ["💓","💗","💖","💘","💞"];
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  
+  heart.innerHTML = hearts[Math.floor(Math.random()*hearts.length)];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random()*2 + 3) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 120); // continuous rain
+</script>
 
