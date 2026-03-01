@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>I'm Really Sorry ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+text-align:center;
+overflow:hidden;
+}
+
+.card{
+background:white;
+width:90%;
+max-width:400px;
+margin:auto;
+margin-top:70px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 12px 30px rgba(0,0,0,0.2);
+}
+
+button{
+padding:12px 20px;
+border:none;
+border-radius:12px;
+margin:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+.yes{background:#28a745;color:white}
+.no{background:#ff4d4d;color:white;position:absolute}
+.reply{background:#6c63ff;color:white}
+
+.chat{
+text-align:left;
+margin-top:10px;
+}
+
+.me{
+background:#e6f7ff;
+padding:10px;
+border-radius:10px;
+margin:5px;
+}
+
+.her{
+background:#ffe6f2;
+padding:10px;
+border-radius:10px;
+margin:5px;
+}
+
+.slideshow img{
+width:100%;
+border-radius:15px;
+margin-top:10px;
+}
+
+.heart{
+position:fixed;
+font-size:20px;
+animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh) scale(1)}
+100%{transform:translateY(110vh) scale(1.5)}
+}
+
+.rose{
+position:fixed;
+font-size:22px;
+animation:rise 7s linear infinite;
+}
+
+@keyframes rise{
+0%{transform:translateY(110vh)}
+100%{transform:translateY(-10vh)}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="music.mp3">
+</audio>
+
+<div class="card">
+
+<h2 id="typing"></h2>
+
+<div class="chat">
+
+<div class="me">I'm really sorry 😔</div>
+<div class="me">I never wanted to hurt you.</div>
+<div class="her">...</div>
+<div class="me">You are very important to me ❤️</div>
+
+</div>
+
+<div class="slideshow">
+<img id="slide" src="photo1.jpg">
+</div>
+
+<h3>My Letter For You 📜</h3>
+
+<p>
+I know I made a mistake.  
+But you mean a lot to me and I truly care about you.  
+I hope you can forgive me someday. ❤️
+</p>
+
+<button class="reply" onclick="reply()">Send Reply 💌</button>
+
+<br>
+
+<button class="yes" onclick="yes()">Yes</button>
+<button class="no" id="noBtn" onmouseover="move()">No</button>
+
+</div>
+
+<script>
+
+let text="Dear Beautiful, Please Forgive Me ❤️";
+let i=0;
+
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,70);
+}
+}
+
+typing();
+
+function move(){
+
+let btn=document.getElementById("noBtn");
+
+btn.style.left=Math.random()*window.innerWidth+"px";
+btn.style.top=Math.random()*window.innerHeight+"px";
+
+}
+
+function reply(){
+
+alert("Waiting for your reply ❤️");
+
+}
+
+function yes(){
+
+for(let i=0;i<150;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+}
+
+document.body.innerHTML="<h1 style='margin-top:200px'>Thank You ❤️<br>You Made Me Smile 😊</h1>";
+
+}
+
+setInterval(function(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+
+},200);
+
+setInterval(function(){
+
+let rose=document.createElement("div");
+
+rose.className="rose";
+
+rose.innerHTML="🌹";
+
+rose.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(rose);
+
+setTimeout(()=>rose.remove(),7000);
+
+},2000);
+
+let images=["photo1.jpg","photo2.jpg","photo3.jpg"];
+
+let index=0;
+
+setInterval(function(){
+
+index=(index+1)%images.length;
+
+document.getElementById("slide").src=images[index];
+
+},3000);
+
+</script>
+
+</body>
+</html>
