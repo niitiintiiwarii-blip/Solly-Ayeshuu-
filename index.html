@@ -269,3 +269,27 @@ draw()
   <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyN3FjaWRqa3FodGV1ZzFlaGpheGg2b21vajBjYXRwdGl6eWNyZzVjbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XYEEvoX0Ub69ZgN9ai/giphy.gif"
        style="width:350px; border-radius:15px;">
 </section>
+<style>
+.gif-glow {
+  width: 350px;
+  border-radius: 15px;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px red, 0 0 20px pink, 0 0 30px red;
+  }
+  50% {
+    box-shadow: 0 0 25px red, 0 0 40px pink, 0 0 55px red;
+  }
+  100% {
+    box-shadow: 0 0 10px red, 0 0 20px pink, 0 0 30px red;
+  }
+}
+</style>
+
+<section style="display:flex; justify-content:center; align-items:center; height:350px;">
+  <img class="gif-glow"
+       src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyN3FjaWRqa3FodGV1ZzFlaGpheGg2b21vajBjYXRwdGl6eWNyZzVjbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XYEEvoX0Ub69ZgN9ai/giphy.gif">
+</section>
