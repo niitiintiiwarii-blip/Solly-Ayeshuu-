@@ -261,9 +261,6 @@ draw()
 
 </body>
 </html>
-<audio autoplay loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
 
 <style>
 .gif-glow {
@@ -289,7 +286,15 @@ draw()
   <img class="gif-glow"
        src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyN3FjaWRqa3FodGV1ZzFlaGpheGg2b21vajBjYXRwdGl6eWNyZzVjbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XYEEvoX0Ub69ZgN9ai/giphy.gif">
 </section>
-
-<audio autoplay loop hidden>
+<audio id="bg-music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+document.addEventListener("click", function() {
+  var music = document.getElementById("bg-music");
+  music.play();
+});
+</script>
+
+
